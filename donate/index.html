@@ -3,41 +3,381 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Поддержать проект | Сайт Сотика</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Поддержи СайтСотика - Купи кружку или доната</title>
+  <meta name="description" content="Поддержи развитие портала СайтСотика. Пожертвуй любую сумму и получи эксклюзивные бонусы, статус донатера и участие в турнирах элиты." />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <h1><a href="/">Сайт Сотика</a></h1>
-      <ul>
-        <li><a href="/">Главная</a></li>
-        <li><a href="/donate/">Поддержать</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="hero">
-      <h2>Поддержать проект</h2>
-      <p>Если вам нравится сайт и вы хотите помочь развитию контента, вы можете сделать донат. Любая поддержка помогает мне продолжать работу и улучшать сайт.</p>
-    </section>
-    <section class="content">
-      <h3>Выберите удобный способ поддержки:</h3>
-      <ul>
-        <li>PayPal</li>
-        <li>Тинькофф</li>
-        <li>Яндекс.Деньги</li>
-        <li>Другие удобные способы оплаты</li>
-      </ul>
-      <p>Контакты для уточнения предпочтительного способа перевода:</p>
-      <p><strong>Электронная почта:</strong> info@siteofsotik.github.io</p>
-      <a class="button" href="https://dalink.to/cynepmactep" target="_blank" rel="noopener">Перейти к поддержке</a>
-      <p class="note">Если вам нужен другой способ оплаты или реквизиты, напишите на email.</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2026 Сайт Сотика. Все права защищены.</p>
-  </footer>
-  <script src="js/script.js"></script>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="/index.html">СайтСотика</a>
+        <button class="nav-toggle" aria-label="Меню" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/games/index.html">Игры</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="donate-hero">
+        <div class="container donate-hero-content">
+          <div class="donate-hero-text">
+            <span class="eyebrow">Помоги развивать портал</span>
+            <h1>Поддержи СайтСотика</h1>
+            <p>Портал создан с любовью к гонкам. Каждый платёж помогает нам развивать новые функции, добавлять игры и улучшать сообщество гонщиков.</p>
+            <div class="donate-hero-cta">
+              <a href="#packages" class="button button-primary">Выбрать поддержку</a>
+              <a href="#why-donate" class="button button-secondary">Узнать подробнее</a>
+            </div>
+          </div>
+          <div class="donate-hero-visual">
+            <div class="speedometer-card card-glow">
+              <div class="speedometer-label">Спасибо</div>
+              <div class="speedometer-needle donate-needle"></div>
+              <div class="speedometer-value"><span>∞</span><small>л.с.</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY DONATE -->
+      <section class="donate-why container" id="why-donate">
+        <div class="section-header">
+          <span>Зачем поддерживать</span>
+          <h2>На что идут ваши деньги</h2>
+        </div>
+        <div class="why-grid">
+          <article class="why-card card-glow">
+            <div class="why-icon">🚀</div>
+            <h3>Новые игры</h3>
+            <p>Добавление гайдов и контента для Gran Turismo, iRacing, BeamNG Drive и других симуляторов.</p>
+          </article>
+          <article class="why-card card-glow">
+            <div class="why-icon">🎮</div>
+            <h3>Новые функции</h3>
+            <p>Таблицы лидеров, система достижений, личные кабинеты гонщиков и встроенный чат.</p>
+          </article>
+          <article class="why-card card-glow">
+            <div class="why-icon">👥</div>
+            <h3>Сообщество</h3>
+            <p>Организация турниров, вебинаров с профессиональными пилотами и конкурсов.</p>
+          </article>
+          <article class="why-card card-glow">
+            <div class="why-icon">🔧</div>
+            <h3>Хостинг и API</h3>
+            <p>Содержание серверов, улучшение производительности и интеграция с базами данных игр.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- DONATION PACKAGES -->
+      <section class="donate-packages container" id="packages">
+        <div class="section-header">
+          <span>Пакеты поддержки</span>
+          <h2>Выбери свой уровень</h2>
+        </div>
+        
+        <div class="packages-grid">
+          <!-- STARTER PACK -->
+          <article class="package-card card-glow">
+            <div class="package-badge">Пилот</div>
+            <h3>Стартовый пакет</h3>
+            <div class="package-price">
+              <span class="price-amount">100₽</span>
+              <span class="price-note">Одноразово</span>
+            </div>
+            <p class="package-description">Первый шаг в поддержку портала</p>
+            <ul class="package-features">
+              <li>✓ Спасибо на главной странице</li>
+              <li>✓ Зелёный статус в чате (месяц)</li>
+              <li>✓ Доступ к закрытому форуму</li>
+              <li>✓ Эксклюзивный гайд (PDF)</li>
+            </ul>
+            <button class="button button-primary donate-btn" data-amount="100">Поддержать 100₽</button>
+          </article>
+
+          <!-- PRO PACK -->
+          <article class="package-card card-glow featured">
+            <div class="package-badge featured-badge">Профессионал</div>
+            <div class="popular-label">ПОПУЛЯРНО</div>
+            <h3>Профессиональный пакет</h3>
+            <div class="package-price">
+              <span class="price-amount">500₽</span>
+              <span class="price-note">Месячно</span>
+            </div>
+            <p class="package-description">Серьёзная поддержка развития</p>
+            <ul class="package-features">
+              <li>✓ Всё из Стартового пакета</li>
+              <li>✓ Жёлтый статус модератора</li>
+              <li>✓ Доступ к закрытому Discord</li>
+              <li>✓ Ранний доступ к новым гайдам</li>
+              <li>✓ Персональная консультация гонщика</li>
+              <li>✓ Чит-лист (Excel с бестами)</li>
+            </ul>
+            <button class="button button-primary donate-btn" data-amount="500">Поддержать 500₽</button>
+          </article>
+
+          <!-- ELITE PACK -->
+          <article class="package-card card-glow">
+            <div class="package-badge">Легенда</div>
+            <h3>Элитный пакет</h3>
+            <div class="package-price">
+              <span class="price-amount">1500₽</span>
+              <span class="price-note">Месячно</span>
+            </div>
+            <p class="package-description">Полная поддержка портала</p>
+            <ul class="package-features">
+              <li>✓ Всё из Профессионального пакета</li>
+              <li>✓ Красный статус ВИП</li>
+              <li>✓ Название в "Зале славы"</li>
+              <li>✓ Прямой доступ к разработчикам</li>
+              <li>✓ Голос в выборе новых игр</li>
+              <li>✓ Эксклюзивный турнир (каждый месяц)</li>
+              <li>✓ Кастомный чит-лист под вас</li>
+            </ul>
+            <button class="button button-primary donate-btn" data-amount="1500">Поддержать 1500₽</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- MERCH SECTION -->
+      <section class="donate-merch container">
+        <div class="section-header">
+          <span>Товары</span>
+          <h2>Или купи кружку СайтСотика</h2>
+        </div>
+        
+        <div class="merch-grid">
+          <article class="merch-card card-glow">
+            <div class="merch-image">
+              <div class="merch-mockup">🏁</div>
+            </div>
+            <h3>Кружка "Финиш"</h3>
+            <p>Керамическая кружка с логотипом СайтСотика и пилотов серии</p>
+            <div class="merch-price">590₽</div>
+            <button class="button button-primary donate-btn" data-product="merch-cup">Заказать</button>
+          </article>
+
+          <article class="merch-card card-glow">
+            <div class="merch-image">
+              <div class="merch-mockup">👕</div>
+            </div>
+            <h3>Футболка "Gamer"</h3>
+            <p>Хлопковая футболка чёрного цвета с логотипом портала</p>
+            <div class="merch-price">890₽</div>
+            <button class="button button-primary donate-btn" data-product="merch-shirt">Заказать</button>
+          </article>
+
+          <article class="merch-card card-glow">
+            <div class="merch-image">
+              <div class="merch-mockup">🧢</div>
+            </div>
+            <h3>Кепка "Racing"</h3>
+            <p>Спортивная кепка с изогнутым козырьком и вышивкой</p>
+            <div class="merch-price">690₽</div>
+            <button class="button button-primary donate-btn" data-product="merch-cap">Заказать</button>
+          </article>
+
+          <article class="merch-card card-glow">
+            <div class="merch-image">
+              <div class="merch-mockup">🎮</div>
+            </div>
+            <h3>Набор наклеек</h3>
+            <p>15 виниловых наклеек для ноутбука, автомобиля или контроллера</p>
+            <div class="merch-price">290₽</div>
+            <button class="button button-primary donate-btn" data-product="merch-stickers">Заказать</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- BENEFITS COMPARISON -->
+      <section class="donate-comparison container">
+        <div class="section-header">
+          <h2>Сравнение пакетов</h2>
+        </div>
+        <div class="comparison-table">
+          <table class="benefits-table">
+            <thead>
+              <tr>
+                <th>Функция</th>
+                <th>Стартовый</th>
+                <th>Профессионал</th>
+                <th>Элитный</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Цена</strong></td>
+                <td>100₽</td>
+                <td>500₽/мес</td>
+                <td>1500₽/мес</td>
+              </tr>
+              <tr>
+                <td>Спасибо на сайте</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Статус в чате</td>
+                <td>Зелёный (1мес)</td>
+                <td>Жёлтый (постоянно)</td>
+                <td>Красный (постоянно)</td>
+              </tr>
+              <tr>
+                <td>Закрытый форум</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Discord сервер</td>
+                <td>—</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Ранний доступ к гайдам</td>
+                <td>—</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Консультация пилота</td>
+                <td>—</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Зал славы</td>
+                <td>—</td>
+                <td>—</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Голос в выборе игр</td>
+                <td>—</td>
+                <td>—</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Эксклюзивный турнир</td>
+                <td>—</td>
+                <td>—</td>
+                <td>✓ Ежемесячно</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="donate-testimonials container">
+        <div class="section-header">
+          <span>Отзывы</span>
+          <h2>Что говорят донатеры</h2>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card card-glow">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">Классный портал! Поддерживаю, потому что здесь лучшие гайды по Forza и люди очень помогают новичкам.</p>
+            <div class="testimonial-author">
+              <strong>Racer_One</strong>
+              <span>Элитный пакет</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card card-glow">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">За 500 рублей в месяц я получаю доступ к закрытому Discord, где можно поговорить с профессионалами. Дешево!</p>
+            <div class="testimonial-author">
+              <strong>DriftKing92</strong>
+              <span>Профессиональный пакет</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card card-glow">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">Кружка выглядит отлично, а поддержав портал, я помогаю развивать будущее гоночного контента.</p>
+            <div class="testimonial-author">
+              <strong>ElectricFlash</strong>
+              <span>Мерч "Кружка"</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="donate-faq container">
+        <div class="section-header">
+          <span>Вопросы</span>
+          <h2>Часто задаваемые вопросы</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Как я смогу оплатить?</h3>
+            <p>Мы принимаем платежи через Яндекс.Касса, ЮКасса, Сбербанк и мобильные платёжные системы. После нажатия кнопки вы перейдёте на защищённую страницу оплаты.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Можно ли отменить подписку?</h3>
+            <p>Да, подписку можно отменить в любой момент. Вы сможете сделать это в личном кабинете или написав в поддержку. Следующее списание не произойдёт.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Как получить мерч?</h3>
+            <p>После заказа мерча мы отправим вам форму адреса доставки. Товар отправляется почтой России или курьером (в крупных городах).</p>
+          </div>
+          <div class="faq-item">
+            <h3>Когда я получу статус донатера?</h3>
+            <p>Статус активируется сразу после успешного платежа. Вы сможете использовать его в чате и на форуме в течение нескольких минут.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Можно ли помочь другим способом?</h3>
+            <p>Да! Помощь может быть и не финансовой: приглашайте друзей, делитесь гайдами, помогайте новичкам в чате и создавайте контент.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Я из-за границы, смогу ли я помочь?</h3>
+            <p>Да, мы принимаем платежи через международные платёжные системы и криптовалюту. Напишите нам в поддержку для уточнения деталей.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="donate-final container">
+        <div class="final-content card-glow">
+          <h2>Спасибо за внимание к СайтСотика</h2>
+          <p>Вне зависимости от того, поддерживаешь ли ты портал финансово или нет — ты уже часть нашего сообщества гонщиков. Спасибо за участие!</p>
+          <div class="final-actions">
+            <a href="#packages" class="button button-primary">Выбрать пакет</a>
+            <a href="/games/index.html" class="button button-secondary">Вернуться к играм</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <div>
+          <p class="footer-brand">СайтСотика - мир гоночных игр и сообщества</p>
+          <p>© 2026 СайтСотика. Все права защищены.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/index.html">Главная</a>
+          <a href="/games/index.html">Игры</a>
+          <a href="/donate/index.html">Поддержка</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <script src="/js/site.js"></script>
+  <script src="/js/donate.js"></script>
 </body>
 </html>
