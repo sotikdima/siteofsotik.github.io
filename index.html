@@ -3,33 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Сайт Сотика</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>СайтСотика — портал гоночных игр</title>
+  <meta name="description" content="СайтСотика — официальный игровой портал Forza Motorsport 7, Forza Motorsport и будущих гоночных релизов." />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Сайт Сотика</h1>
-      <ul>
-        <li><a href="/">Главная</a></li>
-        <li><a href="/donate/">Поддержать</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="hero">
-      <h2>Добро пожаловать на Сайт Сотика!</h2>
-      <p>Здесь вы найдете полезный контент, новости и обновления. Если вам нравится сайт, поддержите его развитие.</p>
-      <a href="/donate/" class="button">Поддержать проект</a>
-    </section>
-    <section class="content">
-      <h3>О сайте</h3>
-      <p>Этот сайт создан для sharing полезной информации, идей и проектов. Спасибо за посещение!</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2026 Сайт Сотика. Все права защищены.</p>
-  </footer>
-  <script src="js/script.js"></script>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="header-inner container">
+        <a class="brand" href="/index.html">СайтСотика</a>
+        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" aria-label="Основная навигация">
+          <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/games/index.html">Игры</a></li>
+            <li><a href="/games/forza-motorsport/index.html">Forza Motorsport</a></li>
+            <li><a href="/games/forza-motorsport-7/index.html">Forza Motorsport 7</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section hero-home">
+        <div class="hero-content container">
+          <div class="hero-copy">
+            <span class="eyebrow">Официальный сайт</span>
+            <h1>СайтСотика — мир гоночных игр, турниров и игровых гайдов</h1>
+            <p>Портал для фанатов Forza Motorsport и Forza Motorsport 7. Новости, сборки, карты, режимы и структура для добавления новых игр.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="/games/index.html">Каталог игр</a>
+              <a class="button button-secondary" href="/games/forza-motorsport/index.html">Forza Motorsport</a>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <span>Тренд</span>
+                <strong>Forza Motorsport</strong>
+              </div>
+              <p>Пошаговые сборки болидов, стратегии управления и лучшие трассы для сетевых заездов.</p>
+              <ul class="hero-card-list">
+                <li>Проходы по трассам</li>
+                <li>Настройки шин и аэродинамики</li>
+                <li>Рейтинг игроков</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-section container">
+        <div class="section-header">
+          <span>СайтСотика</span>
+          <h2>Многостраничная платформа для гонок и игровых обзоров</h2>
+        </div>
+        <div class="intro-grid">
+          <article class="intro-card card-glow">
+            <h3>Игры</h3>
+            <p>Фокусирование на Forza Motorsport и Forza Motorsport 7 с готовой архитектурой для новых релизов.</p>
+          </article>
+          <article class="intro-card card-glow">
+            <h3>Гайды</h3>
+            <p>Руководства по характеристикам, режимам и настройке автомобилей для максимальной эффективности.</p>
+          </article>
+          <article class="intro-card card-glow">
+            <h3>Сообщество</h3>
+            <p>Планирование турниров, лучшие пилоты и добавление игр от сообщества через специальный раздел.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="games-showcase container">
+        <div class="section-header">
+          <span>Игровой каталог</span>
+          <h2>Сейчас на сайте</h2>
+        </div>
+        <div class="games-grid">
+          <article class="game-card card-glow">
+            <div class="game-label">Forza Motorsport</div>
+            <h3>Реалистичный режим гонок</h3>
+            <p>Мастерство на трассе, точные настройки, карьерные соревнования и сетевые заезды.</p>
+            <a class="button button-outline" href="/games/forza-motorsport/index.html">Открыть страницу</a>
+          </article>
+          <article class="game-card card-glow">
+            <div class="game-label">Forza Motorsport 7</div>
+            <h3>Легенда гоночных симуляторов</h3>
+            <p>Коллекции машин, трассы мира, еженедельные турниры и советы по подготовке болида.</p>
+            <a class="button button-outline" href="/games/forza-motorsport-7/index.html">Открыть страницу</a>
+          </article>
+          <article class="game-card card-glow">
+            <div class="game-label">Добавить игру</div>
+            <h3>Архитектура для новых релизов</h3>
+            <p>Страница построена так, чтобы легко расширять каталог новыми гоночными проектами.</p>
+            <a class="button button-outline" href="/games/index.html">Подробнее</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="roadmap-section container">
+        <div class="section-header">
+          <span>План развития</span>
+          <h2>Структура сайта для будущих игр</h2>
+        </div>
+        <div class="roadmap-grid">
+          <article class="roadmap-card card-glow">
+            <h3>Мультистраничность</h3>
+            <p>Каждая игра получает собственный каталог, страницу и навигационный доступ.</p>
+          </article>
+          <article class="roadmap-card card-glow">
+            <h3>Гибкая навигация</h3>
+            <p>Цель — единая система ссылок, списков и быстрых переходов между играми.</p>
+          </article>
+          <article class="roadmap-card card-glow">
+            <h3>Контентная основа</h3>
+            <p>Разделы для обзоров, трасс, машин, сборок и игровых настроек.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <p>© 2026 СайтСотика. Платформа для гоночных игр и будущих релизов.</p>
+        <nav class="footer-nav" aria-label="Футер навигация">
+          <a href="/index.html">Главная</a>
+          <a href="/games/index.html">Игры</a>
+          <a href="/games/forza-motorsport/index.html">Forza</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <script src="/js/site.js"></script>
 </body>
 </html>

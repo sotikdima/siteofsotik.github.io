@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Игры — СайтСотика</title>
+  <meta name="description" content="Каталог гоночных игр на СайтСотика. Поддержка Forza Motorsport, Forza Motorsport 7 и новые игры." />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body data-page="games-list">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="header-inner container">
+        <a class="brand" href="/index.html">СайтСотика</a>
+        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" aria-label="Основная навигация">
+          <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/games/index.html">Игры</a></li>
+            <li><a href="/games/forza-motorsport/index.html">Forza Motorsport</a></li>
+            <li><a href="/games/forza-motorsport-7/index.html">Forza Motorsport 7</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero hero-games">
+        <div class="container">
+          <div class="page-hero-copy">
+            <span class="eyebrow">Каталог игр</span>
+            <h1>Forza Motorsport и Forza Motorsport 7</h1>
+            <p>Каждая игра получает собственный раздел с гайдами, трассами и рекомендациями по железу.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="games-list-section container">
+        <div class="section-header">
+          <span>Выбор игры</span>
+          <h2>Играйте, изучайте и расширяйте каталог</h2>
+        </div>
+        <div class="games-list" id="game-list"></div>
+      </section>
+
+      <section class="add-game-section container">
+        <div class="section-header">
+          <span>Добавить игру</span>
+          <h2>Ждём предложения от сообщества</h2>
+        </div>
+        <div class="add-game-grid">
+          <div class="card-glow add-game-info">
+            <p>Чтобы расширить сайт, заполните форму ниже. Новые игры будут готовиться к добавлению в каталог с готовой страницей.</p>
+            <ul>
+              <li>Выбор игры</li>
+              <li>Описание и режимы</li>
+              <li>Технические требования</li>
+            </ul>
+          </div>
+          <form class="card-glow add-game-form" id="suggestion-form">
+            <label for="suggestion-name">Название игры</label>
+            <input id="suggestion-name" type="text" placeholder="Например, Gran Turismo 7" required />
+            <label for="suggestion-reason">Почему добавить?</label>
+            <textarea id="suggestion-reason" rows="5" placeholder="Коротко опишите, зачем игра нужна на сайте"></textarea>
+            <button class="button button-primary" type="submit">Отправить предложение</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <p>© 2026 СайтСотика. Платформа гоночных игр.</p>
+        <nav class="footer-nav" aria-label="Футер навигация">
+          <a href="/index.html">Главная</a>
+          <a href="/games/index.html">Игры</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
