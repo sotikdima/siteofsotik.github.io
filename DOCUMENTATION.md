@@ -744,12 +744,413 @@ SiteSotika.loadSuggestions()    // Загрузка из localStorage
 
 ## 🚀 Расширяемость для новых игр
 
-Для добавления новой игры (например, Gran Turismo 7):
+### Общий процесс добавления игры
 
-1. Создать папку: `/games/gran-turismo-7/`
-2. Скопировать 6 файлов из любой папки игры
-3. Обновить содержимое (названия, описания)
-4. **НЕ обновлять главное меню** — только каталог `/games/index.html`
+Для добавления новой игры в портал:
+
+1. **Создать папку игры**: `/games/[game-slug]/` (например, `/games/assetto-corsa-competizione/`)
+2. **Создать 6 обязательных файлов**:
+   - `index.html` — главная страница игры
+   - `cars.html` — каталог машин
+   - `tracks.html` — каталог трасс
+   - `guides.html` — гайды и руководства
+   - `community.html` — сообщество и турниры
+   - `builds.html` — готовые сборки
+3. **Обновить `/games/index.html`** — добавить ссылку на новую игру в каталог
+4. **НЕ обновлять главное меню** (`index.html`) — игры ТОЛЬКО в каталоге
+
+---
+
+### Пример 1: Assetto Corsa (серия)
+
+#### Структура папок
+```
+games/
+├── assetto-corsa/              # 📁 Assetto Corsa (исходная игра)
+│   ├── index.html             # 🎮 Главная страница
+│   ├── cars.html              # 🚗 Машины (200+)
+│   ├── tracks.html            # 🏁 Треки (100+)
+│   ├── guides.html            # 📖 Гайды
+│   ├── community.html         # 👥 Сообщество
+│   └── builds.html            # 🔧 Сборки
+│
+└── assetto-corsa-competizione/ # 📁 Assetto Corsa Competizione
+    ├── index.html             # 🎮 Главная страница
+    ├── cars.html              # 🚗 GT машины (50+)
+    ├── tracks.html            # 🏁 Реальные трассы (30+)
+    ├── guides.html            # 📖 Туториалы
+    ├── community.html         # 👥 Киберчемпионат
+    └── builds.html            # 🔧 Setup'ы
+```
+
+#### Содержимое `/games/assetto-corsa/index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assetto Corsa - СайтСотика</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="/index.html">СайтСотика</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/games/index.html">Игры</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Assetto Corsa</h1>
+          <p>Реалистичный симулятор гонок с точной физикой и 200+ машинами</p>
+        </div>
+      </section>
+
+      <section class="game-nav-section container">
+        <div class="section-header">
+          <h2>Разделы Assetto Corsa</h2>
+        </div>
+        <div class="game-nav-grid">
+          <a href="/games/assetto-corsa/cars.html" class="nav-card card-glow">
+            <h3>🚗 Машины</h3>
+            <p>200+ автомобилей с реалистичной физикой</p>
+          </a>
+          <a href="/games/assetto-corsa/tracks.html" class="nav-card card-glow">
+            <h3>🏁 Треки</h3>
+            <p>100+ трасс по всему миру</p>
+          </a>
+          <a href="/games/assetto-corsa/guides.html" class="nav-card card-glow">
+            <h3>📖 Гайды</h3>
+            <p>Мастер-классы по управлению и настройке</p>
+          </a>
+          <a href="/games/assetto-corsa/community.html" class="nav-card card-glow">
+            <h3>👥 Сообщество</h3>
+            <p>Лига гонщиков и события</p>
+          </a>
+          <a href="/games/assetto-corsa/builds.html" class="nav-card card-glow">
+            <h3>🔧 Сборки</h3>
+            <p>Setup'ы для каждой трассы</p>
+          </a>
+          <a href="/games/index.html" class="nav-card card-glow">
+            <h3>← Вернуться</h3>
+            <p>Вернуться в каталог игр</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <p>© 2026 СайтСотика. Assetto Corsa</p>
+      </div>
+    </footer>
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
+```
+
+#### Содержимое `/games/assetto-corsa/cars.html`
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Машины Assetto Corsa - СайтСотика</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="/index.html">СайтСотика</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/games/index.html">Игры</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Машины Assetto Corsa</h1>
+          <p>Более 200 лицензионных автомобилей с подлинной физикой</p>
+        </div>
+      </section>
+
+      <section class="container" style="padding: 70px 0;">
+        <div class="section-header">
+          <h2>Каталог машин</h2>
+        </div>
+        <div class="cars-grid">
+          <article class="car-card card-glow">
+            <h3>Ferrari 458 Italia</h3>
+            <p><strong>Класс:</strong> GT | <strong>Год:</strong> 2010</p>
+            <p>Итальянский суперкар. Отличная управляемость на быстрых поворотах.</p>
+            <div class="specs">
+              <span>Мощность: 570 л.с.</span>
+              <span>Макс скорость: 300 км/ч</span>
+            </div>
+          </article>
+          <article class="car-card card-glow">
+            <h3>Lamborghini Gallardo LP 560</h3>
+            <p><strong>Класс:</strong> GT | <strong>Год:</strong> 2008</p>
+            <p>Агрессивный суперкар с мощным V10.</p>
+            <div class="specs">
+              <span>Мощность: 560 л.с.</span>
+              <span>Макс скорость: 315 км/ч</span>
+            </div>
+          </article>
+          <article class="car-card card-glow">
+            <h3>Porsche 991 Turbo</h3>
+            <p><strong>Класс:</strong> GT | <strong>Год:</strong> 2013</p>
+            <p>Немецкий спортсмен. Идеален для гоночной трассы.</p>
+            <div class="specs">
+              <span>Мощность: 560 л.с.</span>
+              <span>Макс скорость: 318 км/ч</span>
+            </div>
+          </article>
+          <article class="car-card card-glow">
+            <h3>BMW M3 E30</h3>
+            <p><strong>Класс:</strong> Touring | <strong>Год:</strong> 1986</p>
+            <p>Культовый M3. Лёгкий и манёвренный.</p>
+            <div class="specs">
+              <span>Мощность: 238 л.с.</span>
+              <span>Макс скорость: 235 км/ч</span>
+            </div>
+          </article>
+          <article class="car-card card-glow">
+            <h3>Nissan Skyline GT-R R34</h3>
+            <p><strong>Класс:</strong> Touring | <strong>Год:</strong> 1999</p>
+            <p>Японская легенда. Быстрая и стабильная.</p>
+            <div class="specs">
+              <span>Мощность: 330 л.с.</span>
+              <span>Макс скорость: 270 км/ч</span>
+            </div>
+          </article>
+          <article class="car-card card-glow">
+            <h3>Formula K 3008</h3>
+            <p><strong>Класс:</strong> Formulas | <strong>Год:</strong> 2012</p>
+            <p>Формула-подобный болид. Экстремальная производительность.</p>
+            <div class="specs">
+              <span>Мощность: 440 л.с.</span>
+              <span>Макс скорость: 340 км/ч</span>
+            </div>
+          </article>
+        </div>
+        <div style="margin-top: 40px; text-align: center;">
+          <a href="/games/assetto-corsa/index.html" class="button button-primary">← Вернуться</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <p>© 2026 СайтСотика</p>
+      </div>
+    </footer>
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
+```
+
+---
+
+### Пример 2: Project Cars (серия)
+
+#### Структура папок
+```
+games/
+├── project-cars/               # 📁 Project Cars
+│   ├── index.html             # 🎮 Главная страница
+│   ├── cars.html              # 🚗 Машины (180+)
+│   ├── tracks.html            # 🏁 Треки (50+)
+│   ├── guides.html            # 📖 Гайды
+│   ├── community.html         # 👥 Сообщество
+│   └── builds.html            # 🔧 Сборки
+│
+└── project-cars-2/            # 📁 Project Cars 2
+    ├── index.html             # 🎮 Главная страница
+    ├── cars.html              # 🚗 Машины (220+)
+    ├── tracks.html            # 🏁 Трассы (60+)
+    ├── guides.html            # 📖 Туториалы
+    ├── community.html         # 👥 Лига
+    └── builds.html            # 🔧 Setup'ы
+```
+
+#### Содержимое `/games/project-cars/index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Cars - СайтСотика</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="/index.html">СайтСотика</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/games/index.html">Игры</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Project Cars</h1>
+          <p>Карьера гонщика с реалистичной физикой и погодой</p>
+        </div>
+      </section>
+
+      <section class="game-nav-section container">
+        <div class="section-header">
+          <h2>Разделы Project Cars</h2>
+        </div>
+        <div class="game-nav-grid">
+          <a href="/games/project-cars/cars.html" class="nav-card card-glow">
+            <h3>🚗 Машины</h3>
+            <p>180+ машин от Формул до уличных болидов</p>
+          </a>
+          <a href="/games/project-cars/tracks.html" class="nav-card card-glow">
+            <h3>🏁 Треки</h3>
+            <p>50+ гоночных трасс мира</p>
+          </a>
+          <a href="/games/project-cars/guides.html" class="nav-card card-glow">
+            <h3>📖 Гайды</h3>
+            <p>Стратегии и советы профессионалов</p>
+          </a>
+          <a href="/games/project-cars/community.html" class="nav-card card-glow">
+            <h3>👥 Сообщество</h3>
+            <p>Турниры и лига гонщиков</p>
+          </a>
+          <a href="/games/project-cars/builds.html" class="nav-card card-glow">
+            <h3>🔧 Сборки</h3>
+            <p>Готовые настройки и конфигурации</p>
+          </a>
+          <a href="/games/index.html" class="nav-card card-glow">
+            <h3>← Вернуться</h3>
+            <p>Вернуться в каталог игр</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <p>© 2026 СайтСотика. Project Cars</p>
+      </div>
+    </footer>
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
+```
+
+---
+
+### Как добавить новую игру: Пошаговое руководство
+
+#### Шаг 1: Создать папку игры
+
+```
+mkdir games/assetto-corsa-competizione
+```
+
+#### Шаг 2: Скопировать файлы
+
+Скопируйте один из существующих наборов (например, из `/games/forza-motorsport/`):
+- `index.html`
+- `cars.html`
+- `tracks.html`
+- `guides.html`
+- `community.html`
+- `builds.html`
+
+#### Шаг 3: Обновить content в каждом файле
+
+Замените в каждом файле:
+- `<title>` — название страницы
+- `<h1>` — название игры
+- Описания машин, треков, гайдов
+- URL обратных ссылок
+
+**Пример для `/games/assetto-corsa-competizione/index.html`:**
+
+```html
+<title>Assetto Corsa Competizione - СайтСотика</title>
+<h1>Assetto Corsa Competizione</h1>
+<p>Киберспортивный симулятор с официальной киберлигой</p>
+
+<!-- В nav-card'ах обновить href'ы -->
+<a href="/games/assetto-corsa-competizione/cars.html">...</a>
+```
+
+#### Шаг 4: Обновить каталог игр (`/games/index.html`)
+
+Добавить новую игру в `.games-grid`:
+
+```html
+<!-- Assetto Corsa Competizione -->
+<article class="game-card card-glow">
+  <h3>Assetto Corsa Competizione</h3>
+  <p>Киберспортивный симулятор GT с реалистичной физикой</p>
+  <a href="/games/assetto-corsa-competizione/index.html" class="button button-primary">Открыть раздел</a>
+</article>
+```
+
+#### Шаг 5: Коммитить изменения
+
+```powershell
+git add games/assetto-corsa-competizione/
+git add games/index.html
+git commit -m "Добавлена новая игра: Assetto Corsa Competizione"
+git push origin main
+```
+
+---
+
+### Текущий каталог игр (полный)
+
+После расширения структура будет:
+
+```
+games/
+├── index.html                                # Каталог всех игр
+├── forza-motorsport/                        # ✅ Есть
+├── forza-motorsport-7/                      # ✅ Есть
+├── assetto-corsa/                           # 📝 Готов к добавлению
+├── assetto-corsa-competizione/              # 📝 Готов к добавлению
+├── project-cars/                            # 📝 Готов к добавлению
+└── project-cars-2/                          # 📝 Готов к добавлению
+```
+
+Каждая папка содержит 6 файлов:
+- `index.html`, `cars.html`, `tracks.html`, `guides.html`, `community.html`, `builds.html`
 
 ---
 
